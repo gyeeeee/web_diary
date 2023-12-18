@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- js -->
+  <script src="js/const.js"></script>
+  <script src="js/function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/draw.js"></script>
+
+  <!-- data aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <div class="aside-write" id="aside_write"></div>
+  <header class="w-full border-bt-1" id="header"></header>
+
+  <section class="w-full" id="section">
+  </section>
+
+  <footer class="w-full" id="footer"></footer>
+
+  <script>
+    $(function(){
+      loadMember(processJSON);
+
+      let userCookie = getCookie('user');
+      if(isEmpty(userCookie)){
+        draw_index();
+      }else{
+        draw_index(userCookie);
+      }
+
+    
+    });
+  </script>
+</body>
+</html>
